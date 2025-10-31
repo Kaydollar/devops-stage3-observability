@@ -1,284 +1,262 @@
-# 🌀 Blue-Green Deployment Project (with Docker and NGINX)
+# DevOps Stage 3 – Observability & Alerts for Blue/Green Deployment
 
-**Author:** Yinusa Kolawole  
-**Project Title:** Automated Blue-Green Deployment with Docker and NGINX  
-**Stage:** DevOps Stage 2 — Deployment Automation
-
----
-
-## 📘 Overview
-
-This project demonstrates the **Blue-Green Deployment** strategy — a technique that ensures **zero downtime** during application updates or version rollouts.
-
-It uses **Docker** and **NGINX** to simulate two identical environments:
-- **Blue Environment:** The currently live version  
-- **Green Environment:** The new version ready to replace Blue
-
-Traffic is switched between the two using **NGINX reverse proxy configuration**, ensuring seamless version transitions.
+This project extends the **Stage 2 Blue/Green Deployment** setup by adding **observability and actionable alerts**.
+We use **Nginx access logs**, a **Python log watcher**, and **Slack notifications** to monitor and alert on application failovers or elevated error rates.
 
 ---
 
-## 🧩 Project Architecture
+## 🧩 Architecture Overview
 
 **Components:**
-- **Nginx Container:** Acts as a reverse proxy to route traffic to either Blue or Green.
-- **Blue Container:** Represents the current stable version of the app.
-- **Green Container:** Represents the updated version of the app.
 
-## Project structure
+* **Nginx** – Routes requests between Blue and Green pools and writes detailed logs.
+* **App Blue / App Green** – Two instances of the same app (only one is active).
+* **Watcher (Python sidecar)** – Tails Nginx logs, parses events, and posts alerts to Slack.
+* **Slack** – Receives alerts for failovers or high error rates.
 
-blue-green-project/
-├── nginx/
-│   ├── default.conf.tmpl       # Nginx template file (used for switching between blue/green)
-│
-├── reload.sh                   # Script to reload the environment (blue ↔ green)
-├── start.sh                    # Script to start containers
-├── .env                        # Environment variables (active environment, ports, etc.)
-├── .env.example                # Sample environment config
-├── docker-compose.yml          # Docker Compose setup for Nginx + App containers
-└── README.md                   # Documentation
+**Flow Summary:**
 
-# Environment Variables
+1. Nginx logs every request including pool, release ID, and upstream status.
+2. The Python watcher continuously reads the log file.
+3. If a **failover** or **high error rate (> threshold)** occurs, a **Slack alert** is triggered.
+4. Operators use the **runbook.md** to respond appropriately.
 
-Copy .env.example → .env, then update values as needed:
+---
 
-``` bash
-# .env.example
+## ⚙️ Setup Instructions
 
-# Blue and Green image references
-BLUE_IMAGE=yimikaade/wonderful:devops-stage-two   # Blue image
-GREEN_IMAGE=yimikaade/wonderful:devops-stage-two  # Green image
-
-# Which pool is currently active
-ACTIVE_POOL=blue
-
-# Release IDs for header identification
-RELEASE_ID_BLUE=blue-v1
-RELEASE_ID_GREEN=green-v1
-
-# Exposed ports
-PORT_BLUE=8081
-PORT_GREEN=8082
-NGINX_PORT=8080
-```
-
-# Docker Compose Setup
-
-``` bash
-# docker-compose.yml
-version: "3.8"
-
-services:
-  app_blue:
-    image: ${BLUE_IMAGE}
-    container_name: app_blue
-    environment:
-      - RELEASE_ID=${RELEASE_ID_BLUE}
-      - APP_POOL=blue
-      - PORT=${PORT:-3000}
-    ports:
-      - "8081:${PORT:-3000}"
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:${PORT:-3000}/healthz"]
-      interval: 5s
-      timeout: 2s
-      retries: 3
-
-  app_green:
-    image: ${GREEN_IMAGE}
-    container_name: app_green
-    environment:
-      - RELEASE_ID=${RELEASE_ID_GREEN}
-      - APP_POOL=green
-      - PORT=${PORT:-3000}
-    ports:
-      - "8082:${PORT:-3000}"
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:${PORT:-3000}/healthz"]
-      interval: 5s
-      timeout: 2s
-      retries: 3
-
-  nginx:
-    image: nginx:stable
-    container_name: bg_nginx
-    depends_on:
-      - app_blue
-      - app_green
-    ports:
-      - "${NGINX_PUBLIC_PORT:-8088}:80"
-    volumes:
-      - ./nginx/default.conf.tmpl:/etc/nginx/templates/default.conf.tmpl:ro
-      - ./nginx/start.sh:/etc/nginx/start.sh:ro
-      - ./nginx/reload.sh:/etc/nginx/reload.sh:ro
-    environment:
-      - ACTIVE_POOL=${ACTIVE_POOL}
-      - APP_PORT=${PORT:-3000}
-    command: ["/bin/sh", "-c", "/etc/nginx/start.sh"]
-```
-
-# Nginx Configuration
-
-``` bash
-# default.conf.tmpl
-
-# upstream placeholders replaced by start.sh/reload.sh
-upstream app_upstream {
-    server PRIMARY_HOST:PRIMARY_PORT max_fails=1 fail_timeout=3s;
-    server BACKUP_HOST:BACKUP_PORT backup;
-    keepalive 16;
-}
-
-server {
-    listen 80;
-
-    proxy_connect_timeout 1s;
-    proxy_send_timeout 3s;
-    proxy_read_timeout 5s;
-
-    proxy_next_upstream error timeout http_500 http_502 http_503 http_504;
-    proxy_next_upstream_tries 2;
-
-    location / {
-        proxy_pass http://app_upstream;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-App-Proxy "nginx-blue-green";
-
-        proxy_pass_header X-App-Pool;
-        proxy_pass_header X-Release-Id;
-    }
-
-    location /healthz {
-        proxy_pass http://app_upstream/healthz;
-        proxy_set_header Host $host;
-    }
-}
-```
-
-# Manual Start Reload Script
-
-``` bash
-# nginx/start.sh
-#!/bin/sh
-set -eu
-TEMPLATE=/etc/nginx/templates/default.conf.tmpl
-OUT=/etc/nginx/conf.d/default.conf
-ACTIVE_POOL=${ACTIVE_POOL:-blue}
-APP_PORT=${APP_PORT:-3000}
-
-if [ "$ACTIVE_POOL" = "blue" ]; then
-  PRIMARY_HOST="app_blue"
-  BACKUP_HOST="app_green"
-elif [ "$ACTIVE_POOL" = "green" ]; then
-  PRIMARY_HOST="app_green"
-  BACKUP_HOST="app_blue"
-else
-  echo "Invalid ACTIVE_POOL: '$ACTIVE_POOL'"
-  exit 1
-fi
-
-sed -e "s/PRIMARY_HOST/${PRIMARY_HOST}/g" \
-    -e "s/BACKUP_HOST/${BACKUP_HOST}/g" \
-    -e "s/PRIMARY_PORT/${APP_PORT}/g" \
-    -e "s/BACKUP_PORT/${APP_PORT}/g" \
-    "$TEMPLATE" > "$OUT"
-
-echo "Generated $OUT (PRIMARY=${PRIMARY_HOST}:${APP_PORT})"
-nginx -t && nginx -g 'daemon off;'
-```
-
-### I make the script executable
-``` bash
-chmod +x nginx/start.sh
-```
+### 1. Clone Repository
 
 ```bash
-# nginx/reload.sh
-
-#!/bin/sh
-set -eu
-TEMPLATE=/etc/nginx/templates/default.conf.tmpl
-OUT=/etc/nginx/conf.d/default.conf
-ACTIVE_POOL=${ACTIVE_POOL:-blue}
-APP_PORT=${APP_PORT:-3000}
-
-if [ "$ACTIVE_POOL" = "blue" ]; then
-  PRIMARY_HOST="app_blue"
-  BACKUP_HOST="app_green"
-elif [ "$ACTIVE_POOL" = "green" ]; then
-  PRIMARY_HOST="app_green"
-  BACKUP_HOST="app_blue"
-else
-  echo "Invalid ACTIVE_POOL: '$ACTIVE_POOL'"
-  exit 1
-fi
-
-sed -e "s/PRIMARY_HOST/${PRIMARY_HOST}/g" \
-    -e "s/BACKUP_HOST/${BACKUP_HOST}/g" \
-    -e "s/PRIMARY_PORT/${APP_PORT}/g" \
-    -e "s/BACKUP_PORT/${APP_PORT}/g" \
-    "$TEMPLATE" > "$OUT"
-
-echo "Reloading nginx (PRIMARY=${PRIMARY_HOST}:${APP_PORT})"
-nginx -t && nginx -s reload
+git clone https://github.com/Kaydollar/devops-stage3-observability.git
+cd devops-stage3-observability
 ```
 
-## I also made it executable
+### 2. Configure Environment
 
-``` bash
-chmod +x nginx/reload.sh
+Copy the example environment file and update variables:
+
+```bash
+cp .env.example .env
 ```
 
-# How to run
+Fill in the values:
 
-1. I started the Start the stack & smoke tests by Copying the `.env.example` to `.env` and (locally) pulled the required images:
-
-``` bash
-docker pull yimikaade/wonderful:devops-stage-two
 ```
-# 2. Launch
-
-``` bash
-docker compose up -d
-docker compose ps
+ACTIVE_POOL=blue
+SLACK_WEBHOOK_URL=<your_slack_webhook_url>
+ERROR_RATE_THRESHOLD=2
+WINDOW_SIZE=200
+ALERT_COOLDOWN_SEC=300
 ```
 
-# 3. Details verification
-| **Component** | **URL** | **Description** |
-|----------------|----------|----------------|
-| **Blue** | [http://35.176.120.145:8081/version](http://35.176.120.145:8081/version) | Direct access to **Blue** environment |
-| **Green** | [http://35.176.120.145:8082/version](http://35.176.120.145:8082/version) | Direct access to **Green** environment |
-| **Nginx** | [http://35.176.120.145:8080/version](http://35.176.120.145:8080/version) | Routed through **Nginx** (active environment) |
+> ⚠️ **Important:** Do NOT commit `.env` with your real Slack webhook to GitHub.
 
-## 4. Baseline Check (Blue Active)
+---
 
-``` bash
-curl -i http://localhost:8080/version | head -n 20
-# Expected: 200 and headers:
-# X-App-Pool: blue
-# X-Release-Id: <RELEASE_ID_BLUE>
+```bash
+mkdir -p logs/nginx
 ```
 
-# 5. Induce chaos on blue (simulator provided in app image):
+### 3. Build & Run
 
-``` bash
-curl -X POST "http://localhost:8081/chaos/start?mode=error"
+Start the stack:
+
+```bash
+docker compose up --build
 ```
 
-# 6. Immediately check proxied endpoint after chaos:
+This runs:
 
-``` bash
-curl -i http://localhost:8080/version | head -n 20
-# Expected: 200 and headers show X-App-Pool: green and X-Release-Id: <RELEASE_ID_GREEN>
+* `app_blue`
+* `app_green`
+* `bg_nginx` (reverse proxy)
+* `alert_watcher` (Python service)
+
+Nginx logs are stored in a shared volume accessible by the watcher.
+
+---
+
+## 🧪 Testing & Verification
+
+### 🔄 1. Simulate Failover
+
+Toggle between pools:
+
+```bash
+./switch_pool.sh
 ```
 
-# 7. Loop Test, I Opened a new terminal tab and run:
+Expected:
 
-``` bash
-# stop chaos
-curl -X POST "http://localhost:8081/chaos/stop"
+* Nginx reloads.
+* Slack receives a **Failover Detected** alert.
+
+![alt text](<1. High Upstream error.png>)
+
+### ⚠️ 2. Simulate Error Rate
+
+You can simulate failed requests by temporarily breaking one backend (e.g., stopping `app_blue`):
+
+```bash
+docker stop app_blue
 ```
-Expect header X-App-Pool change from blue → green and all proxied requests 200
 
+Expected:
+
+* The watcher detects elevated 5xx responses.
+* Slack receives a **High Error Rate Alert**.
+
+![alt text](<2. Stage 3.png>)
+
+After testing, restart the container:
+
+```bash
+docker start app_blue
+```
+
+### Step 3: Capture JSON Nginx Logs
+These logs prove that your Nginx is recording pool, release, upstream status, latency, and upstream address in structured JSON.
+
+- Steps:
+1. Check the logs inside the Nginx container:
+
+```bash
+docker exec -it bg_nginx tail -n 10 /var/log/nginx/access.log
+```
+
+![alt text](<Stage 3... 3.png>)
+
+---
+
+## 📁 Project Structure
+
+```
+devops-stage3-observability/
+│
+├── nginx/
+│   ├── nginx.conf.template     # Custom log format & upstream config
+│   └── logs/                   # Shared Nginx logs
+│
+├── watcher/
+│   ├── watcher.py              # Python log-watcher
+│   └── requirements.txt        # Python dependencies
+│
+├── .env.example                # Environment variables (no secrets)
+├── docker-compose.yml          # Multi-service setup
+├── switch_pool.sh              # Blue↔Green toggle script
+├── runbook.md                  # Operator guide
+└── README.md                   # Documentation (this file)
+```
+
+---
+
+## 📸 Verification Proofs
+
+| Screenshot | Description                                                                        |
+| ---------- | ---------------------------------------------------------------------------------- |
+| ![]() 1      | Slack Alert – Failover Event                                                       |
+| 🖼️ 2      | Slack Alert – High Error Rate                                                      |
+| 🖼️ 3      | Nginx log snippet showing structured fields (pool, release, upstream status, etc.) |
+
+---
+
+## 📘 Runbook Summary
+
+* **Failover Detected:** Check if the previously active pool is healthy; confirm the new one is stable.
+* **High Error Rate:** Inspect upstream container logs, ensure backend app responds normally.
+* **Recovery:** Once error rate normalizes, system resumes normal state.
+* **Maintenance Mode:** Use environment flag to suppress alerts during planned toggles.
+
+See `runbook.md` for full operator instructions.
+
+## Quick start
+1. Copy example env:
+   ```bash
+   cp .env.example .env
+
+   # edit .env and add SLACK_WEBHOOK_URL
+
+2.  Ensure you have logs/nginx dir:
+
+```bash
+mkdir -p logs/nginx
+```
+
+3. Build & start all services:
+
+```bash
+docker compose up -d --build
+```
+
+Verify
+
+Apps: docker ps — app_blue, app_green should be Up (healthy).
+
+Nginx: curl -s http://localhost:8080/version
+
+Check logs: tail -n 50 logs/nginx/access.log
+
+Testing — Failover (chaos drill)
+
+1.  Ensure active pool current: ./switch_pool.sh --status
+
+2. Force primary failure (example: stop primary container):
+
+- If active is blue:
+```bash
+docker stop app_blue
+```
+- Now send traffic:
+```bash
+for i in $(seq 1 50); do curl -s http://localhost:8080/version >/dev/null; done
+```
+
+3. Restart the stopped container:
+```bash
+docker start app_blue
+```
+
+Testing — Error-rate alert
+
+Option A (quick method): Temporarily point Nginx upstream to a failing backend:
+
+1. Edit .env, set ACTIVE_POOL to a non-existing service, or create a simple container that responds 500 and switch PRIMARY_HOST to that container temporarily.
+
+2. Recreate nginx: docker compose up -d --force-recreate nginx
+
+3. Flood requests:
+```bash
+for i in $(seq 1 500); do curl -s http://localhost:8080/somepath >/dev/null; done
+```
+
+4. Watch Slack for error-rate alert.
+## Logs and verification
+- Access logs: tail -f logs/nginx/access.log (each line is JSON; confirm fields x_app_pool, upstream_status, upstream_addr, request_time).
+
+- Alerts: check Slack channel for messages.
+
+## Files of interest
+- nginx/default.conf.tmpl — Nginx template (structured JSON logs).
+
+- nginx/start.sh, nginx/reload.sh — config rendering and reload scripts.
+
+- switch_pool.sh — toggle ACTIVE_POOL and recreate Nginx (with Slack notifications).
+
+- watcher/ — log watcher Docker image and code.
+
+- runbook.md — operator guidance.
+
+---
+
+### ✅ Stage 3 Acceptance Criteria
+
+* Nginx logs include pool, release, upstream status, and latency.
+* Watcher posts Slack alerts for failover and error-rate breaches.
+* Alerts are deduplicated and respect cooldowns.
+* Runbook is clear and actionable.
+
+---
+
+**Author:** Yinusa Kolawole (Kaydollar)
+**Stage:** DevOps Internship – Stage 3 (Observability & Alerts)

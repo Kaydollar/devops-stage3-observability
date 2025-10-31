@@ -117,3 +117,178 @@
 2025/10/31 08:05:59 [notice] 10#10: start worker process 13
 2025/10/31 08:05:59 [notice] 10#10: start worker process 14
 2025/10/31 08:06:05 [info] 11#11: *1 client 172.19.0.1 closed keepalive connection
+2025/10/31 10:25:29 [notice] 10#10: using the "epoll" event method
+2025/10/31 10:25:29 [notice] 10#10: nginx/1.29.2
+2025/10/31 10:25:29 [notice] 10#10: built by gcc 14.2.0 (Debian 14.2.0-19) 
+2025/10/31 10:25:29 [notice] 10#10: OS: Linux 6.6.87.2-microsoft-standard-WSL2
+2025/10/31 10:25:29 [notice] 10#10: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/31 10:25:29 [notice] 10#10: start worker processes
+2025/10/31 10:25:29 [notice] 10#10: start worker process 11
+2025/10/31 10:25:29 [notice] 10#10: start worker process 12
+2025/10/31 10:25:29 [notice] 10#10: start worker process 13
+2025/10/31 10:25:29 [notice] 10#10: start worker process 14
+2025/10/31 10:30:24 [info] 11#11: *1 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:38 [warn] 12#12: *3 upstream server temporarily disabled while connecting to upstream, client: 172.21.0.1, server: , request: "GET /version HTTP/1.1", upstream: "http://172.21.0.3:3000/version", host: "localhost:8080"
+2025/10/31 10:32:38 [error] 12#12: *3 upstream timed out (110: Connection timed out) while connecting to upstream, client: 172.21.0.1, server: , request: "GET /version HTTP/1.1", upstream: "http://172.21.0.3:3000/version", host: "localhost:8080"
+2025/10/31 10:32:38 [info] 12#12: *3 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:39 [warn] 13#13: *6 upstream server temporarily disabled while connecting to upstream, client: 172.21.0.1, server: , request: "GET /version HTTP/1.1", upstream: "http://172.21.0.3:3000/version", host: "localhost:8080"
+2025/10/31 10:32:39 [error] 13#13: *6 upstream timed out (110: Connection timed out) while connecting to upstream, client: 172.21.0.1, server: , request: "GET /version HTTP/1.1", upstream: "http://172.21.0.3:3000/version", host: "localhost:8080"
+2025/10/31 10:32:39 [info] 13#13: *6 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:40 [warn] 14#14: *9 upstream server temporarily disabled while connecting to upstream, client: 172.21.0.1, server: , request: "GET /version HTTP/1.1", upstream: "http://172.21.0.3:3000/version", host: "localhost:8080"
+2025/10/31 10:32:40 [error] 14#14: *9 upstream timed out (110: Connection timed out) while connecting to upstream, client: 172.21.0.1, server: , request: "GET /version HTTP/1.1", upstream: "http://172.21.0.3:3000/version", host: "localhost:8080"
+2025/10/31 10:32:40 [info] 14#14: *9 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [warn] 11#11: *12 upstream server temporarily disabled while connecting to upstream, client: 172.21.0.1, server: , request: "GET /version HTTP/1.1", upstream: "http://172.21.0.3:3000/version", host: "localhost:8080"
+2025/10/31 10:32:41 [error] 11#11: *12 upstream timed out (110: Connection timed out) while connecting to upstream, client: 172.21.0.1, server: , request: "GET /version HTTP/1.1", upstream: "http://172.21.0.3:3000/version", host: "localhost:8080"
+2025/10/31 10:32:41 [info] 11#11: *12 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 11#11: *15 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 11#11: *17 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 11#11: *19 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 11#11: *21 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 11#11: *23 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 11#11: *25 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 11#11: *27 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 11#11: *29 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 11#11: *31 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 11#11: *33 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 11#11: *35 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 11#11: *37 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 11#11: *39 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 11#11: *41 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 11#11: *43 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 12#12: *45 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 12#12: *47 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 12#12: *49 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 12#12: *51 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 12#12: *53 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 12#12: *55 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 12#12: *57 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 12#12: *59 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 12#12: *61 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 12#12: *63 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 12#12: *65 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 12#12: *67 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 12#12: *69 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 12#12: *71 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 12#12: *73 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 12#12: *75 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 13#13: *77 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 13#13: *79 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 13#13: *81 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 13#13: *83 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:41 [info] 13#13: *85 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:42 [info] 13#13: *87 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:42 [info] 13#13: *89 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:42 [info] 13#13: *91 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:42 [info] 13#13: *93 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:42 [info] 13#13: *95 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:42 [info] 13#13: *97 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:42 [info] 13#13: *99 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:42 [info] 13#13: *101 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:42 [info] 13#13: *103 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:32:42 [info] 13#13: *105 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:47:15 [notice] 10#10: using the "epoll" event method
+2025/10/31 10:47:15 [notice] 10#10: nginx/1.29.2
+2025/10/31 10:47:15 [notice] 10#10: built by gcc 14.2.0 (Debian 14.2.0-19) 
+2025/10/31 10:47:15 [notice] 10#10: OS: Linux 6.6.87.2-microsoft-standard-WSL2
+2025/10/31 10:47:15 [notice] 10#10: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/31 10:47:15 [notice] 10#10: start worker processes
+2025/10/31 10:47:15 [notice] 10#10: start worker process 11
+2025/10/31 10:47:15 [notice] 10#10: start worker process 12
+2025/10/31 10:47:15 [notice] 10#10: start worker process 13
+2025/10/31 10:47:15 [notice] 10#10: start worker process 14
+2025/10/31 10:47:18 [info] 11#11: *1 client 172.21.0.1 closed keepalive connection
+2025/10/31 10:58:56 [info] 12#12: *4 client closed connection while waiting for request, client: 172.21.0.1, server: 0.0.0.0:80
+2025/10/31 10:58:56 [info] 14#14: *3 client closed connection while waiting for request, client: 172.21.0.1, server: 0.0.0.0:80
+2025/10/31 11:02:31 [info] 13#13: *5 client 172.21.0.1 closed keepalive connection
+2025/10/31 11:02:31 [info] 11#11: *7 client 172.21.0.1 closed keepalive connection
+2025/10/31 11:02:31 [info] 11#11: *9 client 172.21.0.1 closed keepalive connection
+2025/10/31 11:02:31 [info] 11#11: *11 client 172.21.0.1 closed keepalive connection
+2025/10/31 11:02:31 [info] 11#11: *13 client 172.21.0.1 closed keepalive connection
+2025/10/31 11:02:31 [info] 11#11: *15 client 172.21.0.1 closed keepalive connection
+2025/10/31 11:02:31 [info] 11#11: *17 client 172.21.0.1 closed keepalive connection
+2025/10/31 11:02:31 [info] 11#11: *19 client 172.21.0.1 closed keepalive connection
+2025/10/31 11:02:31 [info] 11#11: *21 client 172.21.0.1 closed keepalive connection
+2025/10/31 11:02:31 [info] 11#11: *23 client 172.21.0.1 closed keepalive connection
+2025/10/31 11:02:31 [info] 11#11: *25 client 172.21.0.1 closed keepalive connection
+2025/10/31 11:02:31 [info] 11#11: *27 client 172.21.0.1 closed keepalive connection
+2025/10/31 11:02:31 [info] 11#11: *29 client 172.21.0.1 closed keepalive connection
+2025/10/31 11:02:31 [info] 11#11: *31 client 172.21.0.1 closed keepalive connection
+2025/10/31 11:02:31 [info] 11#11: *33 client 172.21.0.1 closed keepalive connection
+2025/10/31 11:02:31 [info] 11#11: *35 client 172.21.0.1 closed keepalive connection
+2025/10/31 11:02:31 [info] 11#11: *37 client 172.21.0.1 closed keepalive connection
+2025/10/31 11:02:31 [info] 14#14: *39 client 172.21.0.1 closed keepalive connection
+2025/10/31 11:02:32 [info] 14#14: *41 client 172.21.0.1 closed keepalive connection
+2025/10/31 11:02:32 [info] 14#14: *43 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:43:24 [notice] 10#10: using the "epoll" event method
+2025/10/31 12:43:24 [notice] 10#10: nginx/1.29.2
+2025/10/31 12:43:24 [notice] 10#10: built by gcc 14.2.0 (Debian 14.2.0-19) 
+2025/10/31 12:43:24 [notice] 10#10: OS: Linux 6.6.87.2-microsoft-standard-WSL2
+2025/10/31 12:43:24 [notice] 10#10: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/10/31 12:43:24 [notice] 10#10: start worker processes
+2025/10/31 12:43:24 [notice] 10#10: start worker process 11
+2025/10/31 12:43:24 [notice] 10#10: start worker process 12
+2025/10/31 12:43:24 [notice] 10#10: start worker process 13
+2025/10/31 12:43:24 [notice] 10#10: start worker process 14
+2025/10/31 12:43:27 [info] 12#12: *1 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:54 [warn] 13#13: *3 upstream server temporarily disabled while connecting to upstream, client: 172.21.0.1, server: , request: "GET /version HTTP/1.1", upstream: "http://172.21.0.3:3000/version", host: "localhost:8080"
+2025/10/31 12:51:54 [error] 13#13: *3 upstream timed out (110: Connection timed out) while connecting to upstream, client: 172.21.0.1, server: , request: "GET /version HTTP/1.1", upstream: "http://172.21.0.3:3000/version", host: "localhost:8080"
+2025/10/31 12:51:54 [info] 13#13: *3 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:55 [warn] 14#14: *6 upstream server temporarily disabled while connecting to upstream, client: 172.21.0.1, server: , request: "GET /version HTTP/1.1", upstream: "http://172.21.0.3:3000/version", host: "localhost:8080"
+2025/10/31 12:51:55 [error] 14#14: *6 upstream timed out (110: Connection timed out) while connecting to upstream, client: 172.21.0.1, server: , request: "GET /version HTTP/1.1", upstream: "http://172.21.0.3:3000/version", host: "localhost:8080"
+2025/10/31 12:51:55 [info] 14#14: *6 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:57 [warn] 11#11: *9 upstream server temporarily disabled while connecting to upstream, client: 172.21.0.1, server: , request: "GET /version HTTP/1.1", upstream: "http://172.21.0.3:3000/version", host: "localhost:8080"
+2025/10/31 12:51:57 [error] 11#11: *9 upstream timed out (110: Connection timed out) while connecting to upstream, client: 172.21.0.1, server: , request: "GET /version HTTP/1.1", upstream: "http://172.21.0.3:3000/version", host: "localhost:8080"
+2025/10/31 12:51:57 [info] 11#11: *9 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:58 [warn] 12#12: *12 upstream server temporarily disabled while connecting to upstream, client: 172.21.0.1, server: , request: "GET /version HTTP/1.1", upstream: "http://172.21.0.3:3000/version", host: "localhost:8080"
+2025/10/31 12:51:58 [error] 12#12: *12 upstream timed out (110: Connection timed out) while connecting to upstream, client: 172.21.0.1, server: , request: "GET /version HTTP/1.1", upstream: "http://172.21.0.3:3000/version", host: "localhost:8080"
+2025/10/31 12:51:58 [info] 12#12: *12 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:58 [info] 12#12: *15 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:58 [info] 12#12: *17 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:58 [info] 12#12: *19 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:58 [info] 12#12: *21 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:58 [info] 12#12: *23 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:58 [info] 12#12: *25 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:58 [info] 12#12: *27 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:58 [info] 12#12: *29 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:58 [info] 12#12: *31 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:58 [info] 12#12: *33 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:58 [info] 12#12: *35 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:58 [info] 12#12: *37 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:58 [info] 12#12: *39 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:58 [info] 12#12: *41 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:58 [info] 12#12: *43 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:59 [warn] 13#13: *45 upstream server temporarily disabled while connecting to upstream, client: 172.21.0.1, server: , request: "GET /version HTTP/1.1", upstream: "http://172.21.0.3:3000/version", host: "localhost:8080"
+2025/10/31 12:51:59 [error] 13#13: *45 upstream timed out (110: Connection timed out) while connecting to upstream, client: 172.21.0.1, server: , request: "GET /version HTTP/1.1", upstream: "http://172.21.0.3:3000/version", host: "localhost:8080"
+2025/10/31 12:51:59 [info] 13#13: *45 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:59 [info] 13#13: *48 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:59 [info] 13#13: *50 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:59 [info] 13#13: *52 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:59 [info] 13#13: *54 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:59 [info] 13#13: *56 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:59 [info] 13#13: *58 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:59 [info] 13#13: *60 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:59 [info] 13#13: *62 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:59 [info] 13#13: *64 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:59 [info] 13#13: *66 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:59 [info] 13#13: *68 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:59 [info] 13#13: *70 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:59 [info] 13#13: *72 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:59 [info] 13#13: *74 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:51:59 [info] 13#13: *76 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:52:00 [warn] 14#14: *78 upstream server temporarily disabled while connecting to upstream, client: 172.21.0.1, server: , request: "GET /version HTTP/1.1", upstream: "http://172.21.0.3:3000/version", host: "localhost:8080"
+2025/10/31 12:52:00 [error] 14#14: *78 upstream timed out (110: Connection timed out) while connecting to upstream, client: 172.21.0.1, server: , request: "GET /version HTTP/1.1", upstream: "http://172.21.0.3:3000/version", host: "localhost:8080"
+2025/10/31 12:52:00 [info] 14#14: *78 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:52:00 [info] 14#14: *81 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:52:00 [info] 14#14: *83 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:52:00 [info] 14#14: *85 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:52:00 [info] 14#14: *87 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:52:00 [info] 14#14: *89 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:52:00 [info] 14#14: *91 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:52:00 [info] 14#14: *93 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:52:00 [info] 14#14: *95 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:52:00 [info] 14#14: *97 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:52:00 [info] 14#14: *99 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:52:00 [info] 14#14: *101 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:52:00 [info] 14#14: *103 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:52:00 [info] 14#14: *105 client 172.21.0.1 closed keepalive connection
+2025/10/31 12:52:00 [info] 14#14: *107 client 172.21.0.1 closed keepalive connection

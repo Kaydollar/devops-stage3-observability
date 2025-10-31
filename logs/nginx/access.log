@@ -16,3 +16,249 @@
 {"time_local":"31/Oct/2025:08:02:56 +0000","remote_addr":"172.19.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.006","upstream_response_time":"0.006","upstream_status":"200","upstream_addr":"172.19.0.2:3000","x_app_pool":"","x_release_id":"","upstream_cache_status":""}
 172.19.0.1 - - [31/Oct/2025:08:06:05 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
 {"time_local":"31/Oct/2025:08:06:05 +0000","remote_addr":"172.19.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.004","upstream_response_time":"0.003","upstream_status":"200","upstream_addr":"172.19.0.3:3000","x_app_pool":"","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:30:24 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:30:24 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.021","upstream_response_time":"0.022","upstream_status":"200","upstream_addr":"172.21.0.3:3000","x_app_pool":"blue","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:38 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:38 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"1.030","upstream_response_time":"1.001, 0.029","upstream_status":"504, 200","upstream_addr":"172.21.0.3:3000, 172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:39 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:39 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"1.004","upstream_response_time":"1.001, 0.003","upstream_status":"504, 200","upstream_addr":"172.21.0.3:3000, 172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:40 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:40 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"1.005","upstream_response_time":"1.001, 0.004","upstream_status":"504, 200","upstream_addr":"172.21.0.3:3000, 172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"1.003","upstream_response_time":"1.001, 0.003","upstream_status":"504, 200","upstream_addr":"172.21.0.3:3000, 172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.004","upstream_response_time":"0.004","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.005","upstream_response_time":"0.005","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.003","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.005","upstream_response_time":"0.006","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.004","upstream_response_time":"0.003","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.004","upstream_response_time":"0.005","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.005","upstream_response_time":"0.006","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.005","upstream_response_time":"0.005","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.003","upstream_response_time":"0.003","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.003","upstream_response_time":"0.003","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.006","upstream_response_time":"0.005","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.003","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.014","upstream_response_time":"0.015","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.004","upstream_response_time":"0.004","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.003","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:41 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:41 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.004","upstream_response_time":"0.004","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:42 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:42 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:42 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:42 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:42 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:42 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:42 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:42 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:42 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:42 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:42 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:42 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:42 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:42 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:42 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:42 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:42 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:42 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:32:42 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:32:42 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.003","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:10:47:18 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:10:47:18 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.003","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:11:02:31 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:11:02:31 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:11:02:31 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:11:02:31 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:11:02:31 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:11:02:31 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:11:02:31 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:11:02:31 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:11:02:31 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:11:02:31 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:11:02:31 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:11:02:31 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.003","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:11:02:31 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:11:02:31 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:11:02:31 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:11:02:31 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:11:02:31 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:11:02:31 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:11:02:31 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:11:02:31 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:11:02:31 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:11:02:31 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:11:02:31 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:11:02:31 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:11:02:31 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:11:02:31 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:11:02:31 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:11:02:31 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:11:02:31 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:11:02:31 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:11:02:31 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:11:02:31 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:11:02:31 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:11:02:31 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:11:02:31 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:11:02:31 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.003","upstream_response_time":"0.003","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:11:02:31 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:11:02:31 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:11:02:32 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:11:02:32 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.004","upstream_response_time":"0.004","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:43:27 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:43:27 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.069","upstream_response_time":"0.068","upstream_status":"200","upstream_addr":"172.21.0.3:3000","x_app_pool":"blue","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:54 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:54 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"1.167","upstream_response_time":"1.000, 0.166","upstream_status":"504, 200","upstream_addr":"172.21.0.3:3000, 172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:55 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:55 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"1.003","upstream_response_time":"1.001, 0.002","upstream_status":"504, 200","upstream_addr":"172.21.0.3:3000, 172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:57 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:57 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"1.005","upstream_response_time":"1.001, 0.004","upstream_status":"504, 200","upstream_addr":"172.21.0.3:3000, 172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:58 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:58 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"1.009","upstream_response_time":"1.000, 0.009","upstream_status":"504, 200","upstream_addr":"172.21.0.3:3000, 172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:58 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:58 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:58 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:58 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.008","upstream_response_time":"0.008","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:58 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:58 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:58 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:58 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:58 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:58 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:58 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:58 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:58 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:58 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:58 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:58 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:58 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:58 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:58 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:58 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:58 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:58 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:58 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:58 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:58 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:58 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:58 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:58 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:58 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:58 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:59 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:59 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"1.006","upstream_response_time":"1.001, 0.005","upstream_status":"504, 200","upstream_addr":"172.21.0.3:3000, 172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:59 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:59 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.003","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:59 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:59 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:59 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:59 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:59 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:59 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:59 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:59 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:59 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:59 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:59 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:59 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:59 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:59 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:59 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:59 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:59 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:59 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:59 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:59 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:59 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:59 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:59 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:59 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.010","upstream_response_time":"0.010","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:59 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:59 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:51:59 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:51:59 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:52:00 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:52:00 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"1.005","upstream_response_time":"1.001, 0.004","upstream_status":"504, 200","upstream_addr":"172.21.0.3:3000, 172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:52:00 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:52:00 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:52:00 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:52:00 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:52:00 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:52:00 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:52:00 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:52:00 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:52:00 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:52:00 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:52:00 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:52:00 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:52:00 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:52:00 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:52:00 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:52:00 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:52:00 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:52:00 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:52:00 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:52:00 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:52:00 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:52:00 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.001","upstream_response_time":"0.001","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:52:00 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:52:00 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.003","upstream_response_time":"0.003","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:52:00 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:52:00 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.002","upstream_response_time":"0.002","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}
+172.21.0.1 - - [31/Oct/2025:12:52:00 +0000] "GET /version HTTP/1.1" 200 57 "-" "curl/8.5.0" "-"
+{"time_local":"31/Oct/2025:12:52:00 +0000","remote_addr":"172.21.0.1","request":"GET /version HTTP/1.1","status":"200","request_time":"0.004","upstream_response_time":"0.004","upstream_status":"200","upstream_addr":"172.21.0.2:3000","x_app_pool":"green","x_release_id":"","upstream_cache_status":""}

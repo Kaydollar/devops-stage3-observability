@@ -51,4 +51,18 @@ services:
       - APP_PORT=${PORT:-3000}
     command: ["/bin/sh", "-c", "/etc/nginx/start.sh"]
 
+  alert_watcher:
+    build: ./watcher
+    container_name: alert_watcher
+    depends_on:
+      - nginx
+    volumes:
+      - ./logs/nginx:/logs/nginx:ro
+    environment:
+      - SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL}
+      - ERROR_RATE_THRESHOLD=${ERROR_RATE_THRESHOLD:-2}
+      - WINDOW_SIZE=${WINDOW_SIZE:-200}
+      - ALERT_COOLDOWN_SEC=${ALERT_COOLDOWN_SEC:-300}
+      - ACTIVE_POOL=${ACTIVE_POOL}
+    restart: always
 
