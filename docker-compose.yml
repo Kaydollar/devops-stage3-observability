@@ -1,3 +1,5 @@
+version: '3.9'
+
 services:
   app_blue:
     image: yimikaade/wonderful:devops-stage-two
@@ -37,6 +39,7 @@ services:
     volumes:
       - ./nginx/default.conf.tmpl:/etc/nginx/templates/default.conf.template
       - ./nginx/logs:/var/log/nginx
+      - ./nginx/switch_pool.sh:/switch_pool.sh
     environment:
       - PRIMARY_HOST=app_blue
       - PRIMARY_PORT=3000

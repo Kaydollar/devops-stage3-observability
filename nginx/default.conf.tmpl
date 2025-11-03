@@ -5,6 +5,7 @@ log_format json_combined escape=json
   '{'
     '"time_local":"$time_local",'
     '"remote_addr":"$remote_addr",'
+    '"x_forwarded_for":"$http_x_forwarded_for",'
     '"request":"$request",'
     '"status":"$status",'
     '"request_time":"$request_time",'
@@ -16,11 +17,11 @@ log_format json_combined escape=json
     '"upstream_cache_status":"$upstream_cache_status"'
   '}';
 
-# ✅ single definition — JSON structured logs to real file
+# ✅ JSON structured logs to real file
 access_log /var/log/nginx/access.log json_combined;
 error_log  /var/log/nginx/error.log info;
 
-# Upstream placeholders -- start.sh or reload.sh substitutes PRIMARY_HOST/BACKUP_HOST/PRIMARY_PORT
+# Upstream placeholders -- envsubst will replace these
 upstream app_upstream {
     server ${PRIMARY_HOST}:${PRIMARY_PORT} max_fails=1 fail_timeout=3s;
     server ${BACKUP_HOST}:${BACKUP_PORT} backup;
@@ -30,30 +31,36 @@ upstream app_upstream {
 server {
     listen 80;
 
+    # Proxy timeouts
     proxy_connect_timeout 1s;
     proxy_send_timeout 3s;
     proxy_read_timeout 5s;
 
+    # Failover rules
     proxy_next_upstream error timeout http_500 http_502 http_503 http_504;
     proxy_next_upstream_tries 2;
 
-    # preserve upstream response headers so nginx can log them
+    # Preserve upstream headers for logging
     proxy_pass_header X-App-Pool;
     proxy_pass_header X-Release-Id;
 
+    # Main app route
     location / {
         proxy_pass http://app_upstream;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-App-Proxy "nginx-blue-green";
+        proxy_set_header X-Active-Pool "${ACTIVE_POOL}";
     }
 
+    # Health endpoint
     location /healthz {
         proxy_pass http://app_upstream/healthz;
         proxy_set_header Host $host;
     }
 
+    # Version endpoint
     location /version {
         proxy_pass http://app_upstream/version;
         proxy_set_header Host $host;
