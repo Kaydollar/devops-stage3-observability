@@ -85,6 +85,8 @@ def parse_line(line):
         print(f"[{now_ts()}] JSON parse error: {e} -- line: {line.strip()}")
         return None, None, None, None, None, None
 
+from collections import deque
+
 def tail_file(path):
     # Wait until file exists
     while not os.path.exists(path):
@@ -92,8 +94,12 @@ def tail_file(path):
         time.sleep(1)
 
     with open(path, "r", encoding="utf-8", errors="ignore") as fh:
-        # seek to end
-        fh.seek(0, os.SEEK_END)
+        # Only keep the last WINDOW_SIZE lines
+        last_lines = deque(fh, maxlen=WINDOW_SIZE)
+        for line in last_lines:
+            yield line
+
+        # Then keep following new lines
         while True:
             line = fh.readline()
             if not line:

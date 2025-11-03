@@ -16,13 +16,14 @@ log_format json_combined escape=json
     '"upstream_cache_status":"$upstream_cache_status"'
   '}';
 
+# ✅ single definition — JSON structured logs to real file
 access_log /var/log/nginx/access.log json_combined;
 error_log  /var/log/nginx/error.log info;
 
 # Upstream placeholders -- start.sh or reload.sh substitutes PRIMARY_HOST/BACKUP_HOST/PRIMARY_PORT
 upstream app_upstream {
-    server PRIMARY_HOST:PRIMARY_PORT max_fails=1 fail_timeout=3s;
-    server BACKUP_HOST:BACKUP_PORT backup;
+    server ${PRIMARY_HOST}:${PRIMARY_PORT} max_fails=1 fail_timeout=3s;
+    server ${BACKUP_HOST}:${BACKUP_PORT} backup;
     keepalive 16;
 }
 
@@ -58,4 +59,3 @@ server {
         proxy_set_header Host $host;
     }
 }
-

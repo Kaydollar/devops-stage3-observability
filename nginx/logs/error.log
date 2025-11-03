@@ -1,0 +1,136 @@
+2025/11/02 16:20:28 [notice] 1#1: using the "epoll" event method
+2025/11/02 16:20:28 [notice] 1#1: nginx/1.29.3
+2025/11/02 16:20:28 [notice] 1#1: built by gcc 14.2.0 (Debian 14.2.0-19) 
+2025/11/02 16:20:28 [notice] 1#1: OS: Linux 6.8.0-1040-aws
+2025/11/02 16:20:28 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/11/02 16:20:28 [notice] 1#1: start worker processes
+2025/11/02 16:20:28 [notice] 1#1: start worker process 35
+2025/11/02 16:20:28 [notice] 1#1: start worker process 36
+2025/11/02 16:26:34 [info] 35#35: *1 client 172.18.0.1 closed keepalive connection
+2025/11/02 16:26:34 [info] 36#36: *3 client 172.18.0.1 closed keepalive connection
+2025/11/02 16:26:34 [info] 35#35: *5 client 172.18.0.1 closed keepalive connection
+2025/11/02 16:30:18 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/11/02 16:30:18 [notice] 35#35: gracefully shutting down
+2025/11/02 16:30:18 [notice] 35#35: exiting
+2025/11/02 16:30:18 [notice] 35#35: exit
+2025/11/02 16:30:18 [notice] 36#36: gracefully shutting down
+2025/11/02 16:30:18 [notice] 36#36: exiting
+2025/11/02 16:30:18 [notice] 36#36: exit
+2025/11/02 16:30:18 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2025/11/02 16:30:18 [notice] 1#1: worker process 35 exited with code 0
+2025/11/02 16:30:18 [notice] 1#1: signal 29 (SIGIO) received
+2025/11/02 16:30:18 [notice] 1#1: signal 17 (SIGCHLD) received from 36
+2025/11/02 16:30:18 [notice] 1#1: worker process 36 exited with code 0
+2025/11/02 16:30:18 [notice] 1#1: exit
+2025/11/02 16:30:20 [notice] 1#1: using the "epoll" event method
+2025/11/02 16:30:20 [notice] 1#1: nginx/1.29.3
+2025/11/02 16:30:20 [notice] 1#1: built by gcc 14.2.0 (Debian 14.2.0-19) 
+2025/11/02 16:30:20 [notice] 1#1: OS: Linux 6.8.0-1040-aws
+2025/11/02 16:30:20 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/11/02 16:30:20 [notice] 1#1: start worker processes
+2025/11/02 16:30:20 [notice] 1#1: start worker process 34
+2025/11/02 16:30:20 [notice] 1#1: start worker process 35
+2025/11/02 16:47:53 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/11/02 16:47:53 [notice] 34#34: gracefully shutting down
+2025/11/02 16:47:53 [notice] 34#34: exiting
+2025/11/02 16:47:53 [notice] 34#34: exit
+2025/11/02 16:47:53 [notice] 35#35: gracefully shutting down
+2025/11/02 16:47:53 [notice] 35#35: exiting
+2025/11/02 16:47:53 [notice] 35#35: exit
+2025/11/02 16:47:53 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2025/11/02 16:47:53 [notice] 1#1: worker process 34 exited with code 0
+2025/11/02 16:47:53 [notice] 1#1: worker process 35 exited with code 0
+2025/11/02 16:47:53 [notice] 1#1: exit
+2025/11/02 16:47:56 [notice] 1#1: using the "epoll" event method
+2025/11/02 16:47:56 [notice] 1#1: nginx/1.29.3
+2025/11/02 16:47:56 [notice] 1#1: built by gcc 14.2.0 (Debian 14.2.0-19) 
+2025/11/02 16:47:56 [notice] 1#1: OS: Linux 6.8.0-1040-aws
+2025/11/02 16:47:56 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/11/02 16:47:56 [notice] 1#1: start worker processes
+2025/11/02 16:47:56 [notice] 1#1: start worker process 35
+2025/11/02 16:47:56 [notice] 1#1: start worker process 36
+2025/11/02 16:51:11 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/11/02 16:51:11 [notice] 35#35: gracefully shutting down
+2025/11/02 16:51:11 [notice] 35#35: exiting
+2025/11/02 16:51:11 [notice] 35#35: exit
+2025/11/02 16:51:11 [notice] 36#36: gracefully shutting down
+2025/11/02 16:51:11 [notice] 36#36: exiting
+2025/11/02 16:51:11 [notice] 36#36: exit
+2025/11/02 16:51:11 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2025/11/02 16:51:11 [notice] 1#1: worker process 35 exited with code 0
+2025/11/02 16:51:11 [notice] 1#1: signal 29 (SIGIO) received
+2025/11/02 16:51:11 [notice] 1#1: signal 17 (SIGCHLD) received from 36
+2025/11/02 16:51:11 [notice] 1#1: worker process 36 exited with code 0
+2025/11/02 16:51:11 [notice] 1#1: exit
+2025/11/02 16:51:32 [notice] 1#1: using the "epoll" event method
+2025/11/02 16:51:32 [notice] 1#1: nginx/1.29.3
+2025/11/02 16:51:32 [notice] 1#1: built by gcc 14.2.0 (Debian 14.2.0-19) 
+2025/11/02 16:51:32 [notice] 1#1: OS: Linux 6.8.0-1040-aws
+2025/11/02 16:51:32 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/11/02 16:51:32 [notice] 1#1: start worker processes
+2025/11/02 16:51:32 [notice] 1#1: start worker process 34
+2025/11/02 16:51:32 [notice] 1#1: start worker process 35
+2025/11/02 16:52:07 [info] 34#34: *1 client 172.18.0.1 closed keepalive connection
+2025/11/02 16:54:10 [info] 35#35: *3 client 172.18.0.1 closed keepalive connection
+2025/11/02 16:54:10 [info] 34#34: *5 client 172.18.0.1 closed keepalive connection
+2025/11/02 16:54:10 [info] 34#34: *7 client 172.18.0.1 closed keepalive connection
+2025/11/02 16:54:52 [info] 34#34: *9 client 172.18.0.1 closed keepalive connection
+2025/11/02 16:55:23 [info] 34#34: *11 client 172.18.0.1 closed keepalive connection
+2025/11/02 16:55:39 [info] 34#34: *13 client 172.18.0.1 closed keepalive connection
+2025/11/02 17:00:41 [info] 34#34: *15 client 204.76.203.219 closed keepalive connection
+2025/11/02 17:21:20 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2025/11/02 17:21:20 [notice] 34#34: gracefully shutting down
+2025/11/02 17:21:20 [notice] 34#34: exiting
+2025/11/02 17:21:20 [notice] 35#35: gracefully shutting down
+2025/11/02 17:21:20 [notice] 35#35: exiting
+2025/11/02 17:21:20 [notice] 34#34: exit
+2025/11/02 17:21:20 [notice] 35#35: exit
+2025/11/02 17:21:20 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2025/11/02 17:21:20 [notice] 1#1: worker process 34 exited with code 0
+2025/11/02 17:21:20 [notice] 1#1: worker process 35 exited with code 0
+2025/11/02 17:21:20 [notice] 1#1: exit
+2025/11/02 17:22:53 [notice] 1#1: using the "epoll" event method
+2025/11/02 17:22:53 [notice] 1#1: nginx/1.29.3
+2025/11/02 17:22:53 [notice] 1#1: built by gcc 14.2.0 (Debian 14.2.0-19) 
+2025/11/02 17:22:53 [notice] 1#1: OS: Linux 6.8.0-1040-aws
+2025/11/02 17:22:53 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2025/11/02 17:22:53 [notice] 1#1: start worker processes
+2025/11/02 17:22:53 [notice] 1#1: start worker process 35
+2025/11/02 17:22:53 [notice] 1#1: start worker process 36
+2025/11/02 17:47:42 [info] 35#35: *1 client 172.18.0.1 closed keepalive connection
+2025/11/02 17:48:10 [info] 36#36: *3 client 172.18.0.1 closed keepalive connection
+2025/11/02 17:48:25 [info] 35#35: *5 client 172.18.0.1 closed keepalive connection
+2025/11/02 18:02:14 [info] 35#35: *7 client 172.18.0.1 closed keepalive connection
+2025/11/02 18:02:14 [info] 35#35: *9 client 172.18.0.1 closed keepalive connection
+2025/11/02 18:02:14 [info] 35#35: *11 client 172.18.0.1 closed keepalive connection
+2025/11/02 18:47:07 [info] 35#35: *13 client 204.76.203.219 closed keepalive connection
+2025/11/02 20:54:35 [info] 35#35: *15 client 204.76.203.219 closed keepalive connection
+2025/11/02 21:40:55 [info] 35#35: *19 client 36.255.98.47 closed keepalive connection
+2025/11/02 22:47:26 [info] 35#35: *21 client 40.80.206.136 closed keepalive connection
+2025/11/02 22:47:26 [info] 35#35: *23 client sent invalid method while reading client request line, client: 40.80.206.136, server: , request: "MGLNDD_34.227.53.222_8080"
+2025/11/02 22:48:12 [info] 35#35: *24 client 204.76.203.219 closed keepalive connection
+2025/11/02 23:42:33 [info] 35#35: *26 client 94.158.87.207 closed keepalive connection
+2025/11/03 00:00:42 [info] 35#35: *28 client 176.65.149.30 closed keepalive connection
+2025/11/03 00:25:01 [info] 35#35: *30 client 65.49.1.80 closed keepalive connection
+2025/11/03 00:25:24 [info] 35#35: *32 client 65.49.1.88 closed keepalive connection
+2025/11/03 00:25:43 [info] 35#35: *34 client 65.49.1.90 closed keepalive connection
+2025/11/03 00:25:55 [info] 36#36: *36 client sent CONNECT method while reading client request headers, client: 65.49.1.84, server: , request: "CONNECT www.shadowserver.org:443 HTTP/1.1", host: "www.shadowserver.org"
+2025/11/03 00:26:00 [info] 36#36: *37 client 65.49.1.80 closed keepalive connection
+2025/11/03 00:40:35 [info] 36#36: *39 client 64.226.98.14 closed keepalive connection
+2025/11/03 00:40:37 [info] 36#36: *41 client 64.226.98.14 closed keepalive connection
+2025/11/03 00:40:40 [info] 36#36: *43 client 64.226.98.14 closed keepalive connection
+2025/11/03 00:54:03 [info] 36#36: *45 client 204.76.203.219 closed keepalive connection
+2025/11/03 01:06:07 [info] 36#36: *47 client sent invalid method while reading client request line, client: 209.38.82.205, server: , request: " {  wqÚ€ö¸°$"a¯	ayeüi§¸‚å.∏üÿÂÉ  ¿/¿+¿¿¿¿	¿¿"
+2025/11/03 01:06:07 [info] 36#36: *48 client sent invalid method while reading client request line, client: 209.38.82.205, server: , request: " {  w¿Kà≈¯õ™êQˆsN∑I6`j(&ÃlÛò˝ ˝ë  ¿/¿+¿¿¿¿	¿¿"
+2025/11/03 01:06:08 [info] 36#36: *49 client 209.38.82.205 closed keepalive connection
+2025/11/03 01:06:08 [info] 36#36: *51 client 209.38.82.205 closed keepalive connection
+2025/11/03 01:06:09 [info] 36#36: *53 client 209.38.82.205 closed keepalive connection
+2025/11/03 01:29:05 [info] 36#36: *55 client sent invalid method while reading client request line, client: 38.242.215.0, server: , request: " ¥áõÛµro"
+2025/11/03 02:54:29 [info] 36#36: *56 client 204.76.203.219 closed keepalive connection
+2025/11/03 03:46:40 [info] 36#36: *58 client sent invalid method while reading client request line, client: 65.49.1.80, server: , request: " {  wÑ≤Ω˙ˇÚÛJGzÜW∏@3-÷†√›n§1ñ\ó!…˝Ãi  ¿/¿+¿¿¿¿	¿¿"
+2025/11/03 05:00:17 [info] 36#36: *61 client 204.76.203.219 closed keepalive connection
+2025/11/03 06:55:40 [info] 35#35: *63 client 204.76.203.219 closed keepalive connection
+2025/11/03 07:53:22 [info] 35#35: *65 client 204.76.203.18 closed keepalive connection
+2025/11/03 08:00:14 [info] 35#35: *67 client 204.76.203.18 closed keepalive connection
+2025/11/03 08:07:26 [info] 35#35: *69 client 204.76.203.18 closed keepalive connection
+2025/11/03 08:36:29 [info] 35#35: *71 client 204.76.203.18 closed keepalive connection
