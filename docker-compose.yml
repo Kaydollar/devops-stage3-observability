@@ -54,11 +54,15 @@ services:
     build: ./watcher
     container_name: alert_watcher
     environment:
+<<<<<<< HEAD
       - NGINX_LOG_PATH=/logs/nginx/access.log
       - ERROR_RATE_THRESHOLD=2.0
       - WINDOW_SIZE=200
       - ALERT_COOLDOWN_SEC=300
       - ACTIVE_POOL=blue
+=======
+      - PYTHONUNBUFFERED=1
+>>>>>>> c6ebc8a (Updated my working files)
       - SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL}
     volumes:
       - ./nginx/logs:/logs/nginx

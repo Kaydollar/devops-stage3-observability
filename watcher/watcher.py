@@ -1,33 +1,25 @@
 #!/usr/bin/env python3
-"""
-watcher.py
-Tails nginx JSON access log lines (one JSON object per line).
-Detects failovers (pool changes) and high upstream 5xx error-rate over sliding window.
-Posts alerts to Slack via webhook configured in env SLACK_WEBHOOK_URL.
-"""
-
 import os
 import time
 import json
 import requests
 from collections import deque
-from datetime import datetime, timedelta
 
-LOG_PATH = os.environ.get("NGINX_LOG_PATH", "/logs/nginx/access.log")
-WEBHOOK = os.environ.get("SLACK_WEBHOOK_URL", "")
-THRESHOLD_PCT = float(os.environ.get("ERROR_RATE_THRESHOLD", "2"))  # percent
-WINDOW_SIZE = int(os.environ.get("WINDOW_SIZE", "200"))
-ALERT_COOLDOWN = int(os.environ.get("ALERT_COOLDOWN_SEC", "300"))
-ACTIVE_POOL = os.environ.get("ACTIVE_POOL", "").lower()  # initial value
+# === Config ===
+LOG_PATH = os.getenv("NGINX_LOG_PATH", "/logs/nginx/access.log")
+ERROR_RATE_THRESHOLD = float(os.getenv("ERROR_RATE_THRESHOLD", 2.0))
+WINDOW_SIZE = int(os.getenv("WINDOW_SIZE", 200))
+ALERT_COOLDOWN_SEC = int(os.getenv("ALERT_COOLDOWN_SEC", 300))
+ACTIVE_POOL = os.getenv("ACTIVE_POOL", "blue")
+SLACK_WEBHOOK_URL = os.getenv("SLACK_WEBHOOK_URL")
 
-# State
-last_pool = None
-error_window = deque(maxlen=WINDOW_SIZE)  # store booleans (is_5xx)
-last_alert_time = {"failover": None, "error_rate": None}
+# === State ===
+recent_status = deque(maxlen=WINDOW_SIZE)
+last_alert_time = 0
+last_seen_pool = ACTIVE_POOL
 
-def now_ts():
-    return datetime.utcnow().isoformat() + "Z"
 
+<<<<<<< HEAD
 def post_slack(text):
     if not WEBHOOK:
         print(f"[{now_ts()}] No SLACK_WEBHOOK_URL set; would post: {text}")
@@ -116,38 +108,75 @@ def main():
 
         # is upstream 5xx?
         is_upstream_5xx = False
+=======
+def send_alert(message, level="error"):
+    """Send alert to Slack or print to console."""
+    emoji = "🚨" if level == "error" else "🟢"
+    payload = {"text": f"{emoji} {message}"}
+    if SLACK_WEBHOOK_URL:
+>>>>>>> c6ebc8a (Updated my working files)
         try:
-            # consider upstream_status may be "200" or "502, 200" etc.
-            code = None
-            if upstream_status:
-                # take first numeric segment
-                for part in str(upstream_status).split(","):
-                    s = part.strip()
-                    if s.isdigit():
-                        code = int(s)
-                        break
-            if code is None and status:
-                if str(status).isdigit():
-                    code = int(status)
-            if code and 500 <= int(code) < 600:
-                is_upstream_5xx = True
-        except Exception:
-            is_upstream_5xx = False
+            requests.post(SLACK_WEBHOOK_URL, json=payload, timeout=5)
+        except Exception as e:
+            print(f"⚠️ Failed to send Slack alert: {e}")
+    else:
+        print(f"{emoji} {message}")
 
-        # append to window
-        error_window.append(is_upstream_5xx)
 
-        # check error rate
-        check_and_alert_error_rate()
+def analyze_error_rate():
+    """Compute rolling error rate as a percentage."""
+    if not recent_status:
+        return 0
+    errors = sum(1 for code in recent_status if code >= 500)
+    return (errors / len(recent_status)) * 100
 
-        # detect pool changes using x_app_pool, if present; otherwise infer from upstream_addr
-        detected_pool = pool if pool else ( "green" if "green" in (upstream_addr or "") else ("blue" if "blue" in (upstream_addr or "") else None) )
 
-        handle_pool(detected_pool, upstream_addr, upstream_status, line.strip())
+def monitor_logs():
+    global last_alert_time, last_seen_pool
+    print(f"👀 Watching Nginx log file: {LOG_PATH}")
+    print(f"🔧 ACTIVE_POOL = {ACTIVE_POOL}, WINDOW_SIZE = {WINDOW_SIZE}, ERROR_THRESHOLD = {ERROR_RATE_THRESHOLD}%")
+
+    # Wait for log file to appear
+    while not os.path.exists(LOG_PATH):
+        print(f"Waiting for {LOG_PATH} ...")
+        time.sleep(3)
+
+    with open(LOG_PATH, "r") as f:
+        f.seek(0, os.SEEK_END)
+        while True:
+            line = f.readline()
+            if not line:
+                time.sleep(1)
+                continue
+
+            try:
+                log = json.loads(line.strip())
+            except json.JSONDecodeError:
+                # ignore non-JSON lines (classic logs, partial writes)
+                continue
+
+            status = int(log.get("status", 0))
+            pool = log.get("x_app_pool", "unknown")
+            recent_status.append(status)
+
+            # Detect failover / pool switch
+            if pool != last_seen_pool and (time.time() - last_alert_time > ALERT_COOLDOWN_SEC):
+                send_alert(f"Failover detected: pool switched {last_seen_pool} → {pool}", level="error")
+                last_seen_pool = pool
+                last_alert_time = time.time()
+
+            # Detect upstream errors
+            error_rate = analyze_error_rate()
+            now = time.time()
+            if error_rate > ERROR_RATE_THRESHOLD and (now - last_alert_time > ALERT_COOLDOWN_SEC):
+                send_alert(f"High upstream error rate: {error_rate:.2f}% on pool *{pool}*", level="error")
+                last_alert_time = now
+
+            # Recovery notification
+            elif error_rate < 1.0 and (now - last_alert_time > 30):
+                send_alert(f"Upstream pool *{pool}* recovered, error rate back to {error_rate:.2f}%", level="info")
+
 
 if __name__ == "__main__":
-    try:
-        main()
-    except KeyboardInterrupt:
-        print("Watcher exiting")
+    monitor_logs()
 

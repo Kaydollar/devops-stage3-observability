@@ -1,5 +1,5 @@
 # nginx/default.conf.tmpl
-# JSON structured logs including upstream info and pool/release headers returned by app
+# Clean JSON logs, structured for alert watcher
 
 log_format json_combined escape=json
   '{'
@@ -19,9 +19,13 @@ log_format json_combined escape=json
 
 # ✅ JSON structured logs to real file
 access_log /var/log/nginx/access.log json_combined;
-error_log  /var/log/nginx/error.log info;
+error_log /var/log/nginx/error.log info;
 
+<<<<<<< HEAD
 # Upstream placeholders -- envsubst will replace these
+=======
+# Upstream definition -- primary and backup
+>>>>>>> c6ebc8a (Updated my working files)
 upstream app_upstream {
     server ${PRIMARY_HOST}:${PRIMARY_PORT} max_fails=1 fail_timeout=3s;
     server ${BACKUP_HOST}:${BACKUP_PORT} backup;
@@ -40,7 +44,11 @@ server {
     proxy_next_upstream error timeout http_500 http_502 http_503 http_504;
     proxy_next_upstream_tries 2;
 
+<<<<<<< HEAD
     # Preserve upstream headers for logging
+=======
+    # Preserve upstream response headers for logging
+>>>>>>> c6ebc8a (Updated my working files)
     proxy_pass_header X-App-Pool;
     proxy_pass_header X-Release-Id;
 
